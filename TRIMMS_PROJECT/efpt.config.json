@@ -1,0 +1,115 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "TRIMMSContext",
+   "ContextNamespace": "Data",
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": "Models",
+   "OutputContextPath": "Data",
+   "OutputPath": "Models",
+   "ProjectRootNamespace": "TRIMMS_PROJECT",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[Allocation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AllocationType]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Client]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ClientGroup]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Country]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Currency]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Employee]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Holiday]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[L0_Table]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[L1_Table]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[L2_Table]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Location]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Modules]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Project]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ProjectType]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Region]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Role]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[State]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Task]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Timesheets]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "SRINIVAS_ROY\\SQLEXPRESS.TRIMMS",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}
