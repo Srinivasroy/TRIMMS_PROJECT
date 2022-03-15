@@ -269,11 +269,7 @@ namespace TRIMMS_PROJECT.Data
                     .IsUnicode(false)
                     .HasColumnName("Vertical(L2)");
 
-                entity.HasOne(d => d.Emp)
-                    .WithOne(p => p.Employee)
-                    .HasForeignKey<Employee>(d => d.EmpId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Employee_Allocation");
+                
 
                 entity.HasOne(d => d.LocationNavigation)
                     .WithMany(p => p.Employees)

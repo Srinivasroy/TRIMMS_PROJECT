@@ -19,7 +19,7 @@ namespace TRIMMS_PROJECT.Models
         public string Band { get; set; }
         public string Level { get; set; }
 
-        public virtual Allocation Emp { get; set; }
+       
         public virtual Location LocationNavigation { get; set; }
         public virtual L2Table VerticalL2Navigation { get; set; }
     }
