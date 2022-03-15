@@ -37,7 +37,7 @@ namespace TRIMMS_PROJECT.Data
         public virtual DbSet<Region> Regions { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<State> States { get; set; }
-        public virtual DbSet<Task> Tasks { get; set; }
+        public virtual DbSet<Models.Task> Tasks { get; set; }
         public virtual DbSet<Timesheet> Timesheets { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -619,7 +619,7 @@ namespace TRIMMS_PROJECT.Data
                     .HasConstraintName("FK_State_Country");
             });
 
-            modelBuilder.Entity<Task>(entity =>
+            modelBuilder.Entity<Models.Task>(entity =>
             {
                 entity.ToTable("Task");
 
