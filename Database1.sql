@@ -1,86 +1,6 @@
-USE [master]
-GO
-/****** Object:  Database [TRIMMS]    Script Date: 18-03-2022 11:07:17 ******/
-CREATE DATABASE [TRIMMS]
- CONTAINMENT = NONE
- ON  PRIMARY 
-( NAME = N'TRIMMS', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\TRIMMS.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
- LOG ON 
-( NAME = N'TRIMMS_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\TRIMMS_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
- WITH CATALOG_COLLATION = DATABASE_DEFAULT
-GO
-ALTER DATABASE [TRIMMS] SET COMPATIBILITY_LEVEL = 150
-GO
-IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
-begin
-EXEC [TRIMMS].[dbo].[sp_fulltext_database] @action = 'enable'
-end
-GO
-ALTER DATABASE [TRIMMS] SET ANSI_NULL_DEFAULT OFF 
-GO
-ALTER DATABASE [TRIMMS] SET ANSI_NULLS OFF 
-GO
-ALTER DATABASE [TRIMMS] SET ANSI_PADDING OFF 
-GO
-ALTER DATABASE [TRIMMS] SET ANSI_WARNINGS OFF 
-GO
-ALTER DATABASE [TRIMMS] SET ARITHABORT OFF 
-GO
-ALTER DATABASE [TRIMMS] SET AUTO_CLOSE OFF 
-GO
-ALTER DATABASE [TRIMMS] SET AUTO_SHRINK OFF 
-GO
-ALTER DATABASE [TRIMMS] SET AUTO_UPDATE_STATISTICS ON 
-GO
-ALTER DATABASE [TRIMMS] SET CURSOR_CLOSE_ON_COMMIT OFF 
-GO
-ALTER DATABASE [TRIMMS] SET CURSOR_DEFAULT  GLOBAL 
-GO
-ALTER DATABASE [TRIMMS] SET CONCAT_NULL_YIELDS_NULL OFF 
-GO
-ALTER DATABASE [TRIMMS] SET NUMERIC_ROUNDABORT OFF 
-GO
-ALTER DATABASE [TRIMMS] SET QUOTED_IDENTIFIER OFF 
-GO
-ALTER DATABASE [TRIMMS] SET RECURSIVE_TRIGGERS OFF 
-GO
-ALTER DATABASE [TRIMMS] SET  DISABLE_BROKER 
-GO
-ALTER DATABASE [TRIMMS] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
-GO
-ALTER DATABASE [TRIMMS] SET DATE_CORRELATION_OPTIMIZATION OFF 
-GO
-ALTER DATABASE [TRIMMS] SET TRUSTWORTHY OFF 
-GO
-ALTER DATABASE [TRIMMS] SET ALLOW_SNAPSHOT_ISOLATION OFF 
-GO
-ALTER DATABASE [TRIMMS] SET PARAMETERIZATION SIMPLE 
-GO
-ALTER DATABASE [TRIMMS] SET READ_COMMITTED_SNAPSHOT OFF 
-GO
-ALTER DATABASE [TRIMMS] SET HONOR_BROKER_PRIORITY OFF 
-GO
-ALTER DATABASE [TRIMMS] SET RECOVERY SIMPLE 
-GO
-ALTER DATABASE [TRIMMS] SET  MULTI_USER 
-GO
-ALTER DATABASE [TRIMMS] SET PAGE_VERIFY CHECKSUM  
-GO
-ALTER DATABASE [TRIMMS] SET DB_CHAINING OFF 
-GO
-ALTER DATABASE [TRIMMS] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
-GO
-ALTER DATABASE [TRIMMS] SET TARGET_RECOVERY_TIME = 60 SECONDS 
-GO
-ALTER DATABASE [TRIMMS] SET DELAYED_DURABILITY = DISABLED 
-GO
-ALTER DATABASE [TRIMMS] SET ACCELERATED_DATABASE_RECOVERY = OFF  
-GO
-ALTER DATABASE [TRIMMS] SET QUERY_STORE = OFF
-GO
 USE [TRIMMS]
 GO
-/****** Object:  Table [dbo].[Allocation]    Script Date: 18-03-2022 11:07:18 ******/
+/****** Object:  Table [dbo].[Allocation]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -99,7 +19,7 @@ CREATE TABLE [dbo].[Allocation](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AllocationType]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[AllocationType]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -113,7 +33,7 @@ CREATE TABLE [dbo].[AllocationType](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Client]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[Client]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -129,7 +49,7 @@ CREATE TABLE [dbo].[Client](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ClientGroup]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[ClientGroup]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -143,7 +63,7 @@ CREATE TABLE [dbo].[ClientGroup](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Country]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[Country]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -158,7 +78,7 @@ CREATE TABLE [dbo].[Country](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Currency]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[Currency]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -173,7 +93,7 @@ CREATE TABLE [dbo].[Currency](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Employee]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[Employee]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -181,23 +101,30 @@ GO
 CREATE TABLE [dbo].[Employee](
 	[Emp_ID] [varchar](50) NOT NULL,
 	[Emp_Name] [varchar](max) NOT NULL,
-	[Designation] [varchar](max) NOT NULL,
-	[Location] [varchar](50) NOT NULL,
-	[DOJ] [date] NOT NULL,
-	[LWD] [date] NOT NULL,
-	[Vertical_L2] [varchar](50) NOT NULL,
+	[DOB] [date] NOT NULL,
+	[Gender] [varchar](50) NOT NULL,
+	[Designation] [varchar](max) NULL,
+	[Location] [varchar](50) NULL,
+	[DOJ] [date] NULL,
+	[Contact_Number] [bigint] NOT NULL,
+	[LWD] [date] NULL,
+	[Vertical_L2] [varchar](50) NULL,
 	[Email_ID] [varchar](50) NOT NULL,
-	[RM_Emp_ID] [varchar](50) NOT NULL,
-	[Band] [varchar](max) NOT NULL,
-	[Level] [varchar](max) NOT NULL,
+	[RM_Emp_ID] [varchar](50) NULL,
+	[Band] [varchar](max) NULL,
+	[Level] [varchar](max) NULL,
 	[Role_ID] [varchar](50) NULL,
+	[Address] [varchar](max) NOT NULL,
+	[State_ID] [varchar](50) NOT NULL,
+	[Country_ID] [varchar](50) NOT NULL,
+	[PinCode] [varchar](50) NOT NULL,
  CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED 
 (
 	[Emp_ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Holiday]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[Holiday]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -214,7 +141,7 @@ CREATE TABLE [dbo].[Holiday](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[L0_Table]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[L0_Table]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -228,7 +155,7 @@ CREATE TABLE [dbo].[L0_Table](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[L1_Table]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[L1_Table]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -243,7 +170,7 @@ CREATE TABLE [dbo].[L1_Table](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[L2_Table]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[L2_Table]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -258,7 +185,7 @@ CREATE TABLE [dbo].[L2_Table](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Location]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[Location]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -273,7 +200,7 @@ CREATE TABLE [dbo].[Location](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Modules]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[Modules]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -287,7 +214,7 @@ CREATE TABLE [dbo].[Modules](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Project]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[Project]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -309,7 +236,7 @@ CREATE TABLE [dbo].[Project](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ProjectType]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[ProjectType]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -323,7 +250,7 @@ CREATE TABLE [dbo].[ProjectType](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Region]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[Region]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -337,7 +264,7 @@ CREATE TABLE [dbo].[Region](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Role]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[Role]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -357,7 +284,7 @@ CREATE TABLE [dbo].[Role](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[State]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[State]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -372,7 +299,7 @@ CREATE TABLE [dbo].[State](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Task]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[Task]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -387,7 +314,7 @@ CREATE TABLE [dbo].[Task](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Timesheets]    Script Date: 18-03-2022 11:07:19 ******/
+/****** Object:  Table [dbo].[Timesheets]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -407,100 +334,6 @@ CREATE TABLE [dbo].[Timesheets](
 	[TS_ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-INSERT [dbo].[AllocationType] ([Alloc_ID], [Allocation_Type]) VALUES (N'AID01', N'AT_1')
-GO
-INSERT [dbo].[AllocationType] ([Alloc_ID], [Allocation_Type]) VALUES (N'AID02', N'AT_2')
-GO
-INSERT [dbo].[Client] ([Client_ID], [ClientGroup_ID], [Client_Name], [Location_ID]) VALUES (N'CID01', N'CG01', N'Convey Health Solutions', N'104')
-GO
-INSERT [dbo].[Client] ([Client_ID], [ClientGroup_ID], [Client_Name], [Location_ID]) VALUES (N'CID02', N'CG02', N'Test Client', N'103')
-GO
-INSERT [dbo].[ClientGroup] ([ClientGroup_ID], [ClientGroup_Name]) VALUES (N'CG01', N'CHS')
-GO
-INSERT [dbo].[ClientGroup] ([ClientGroup_ID], [ClientGroup_Name]) VALUES (N'CG02', N'TC')
-GO
-INSERT [dbo].[Country] ([Country_ID], [Country_Name], [Region_ID]) VALUES (N'IN-1', N'India', N'IN_TN')
-GO
-INSERT [dbo].[Country] ([Country_ID], [Country_Name], [Region_ID]) VALUES (N'IN-2', N'India', N'IN_KA')
-GO
-INSERT [dbo].[Country] ([Country_ID], [Country_Name], [Region_ID]) VALUES (N'IN-3', N'India', N'IN_AR')
-GO
-INSERT [dbo].[Country] ([Country_ID], [Country_Name], [Region_ID]) VALUES (N'US-1', N'United States', N'US_CU')
-GO
-INSERT [dbo].[Currency] ([Currency_ID], [Currency_Symbol], [Country_ID]) VALUES (N'CURR01', N'Rs.', N'IN-1')
-GO
-INSERT [dbo].[Currency] ([Currency_ID], [Currency_Symbol], [Country_ID]) VALUES (N'CURR02', N'Rs.', N'IN-2')
-GO
-INSERT [dbo].[Currency] ([Currency_ID], [Currency_Symbol], [Country_ID]) VALUES (N'CURR03', N'$', N'US-1')
-GO
-INSERT [dbo].[Employee] ([Emp_ID], [Emp_Name], [Designation], [Location], [DOJ], [LWD], [Vertical_L2], [Email_ID], [RM_Emp_ID], [Band], [Level], [Role_ID]) VALUES (N'IS001', N'Srini', N'Developer', N'101', CAST(N'2021-12-02' AS Date), CAST(N'2022-03-16' AS Date), N'21', N'srini@gmail.com', N'RM01', N'band2', N'Trainee', N'2001')
-GO
-INSERT [dbo].[Employee] ([Emp_ID], [Emp_Name], [Designation], [Location], [DOJ], [LWD], [Vertical_L2], [Email_ID], [RM_Emp_ID], [Band], [Level], [Role_ID]) VALUES (N'IS002', N'Chandru', N'Developer', N'103', CAST(N'2021-12-03' AS Date), CAST(N'2022-03-15' AS Date), N'21', N'chandru@gmail.com', N'RM01', N'band3', N'Trainee', N'2001')
-GO
-INSERT [dbo].[Employee] ([Emp_ID], [Emp_Name], [Designation], [Location], [DOJ], [LWD], [Vertical_L2], [Email_ID], [RM_Emp_ID], [Band], [Level], [Role_ID]) VALUES (N'IS003', N'Sharon', N'Developer', N'104', CAST(N'2021-12-04' AS Date), CAST(N'2022-03-12' AS Date), N'21', N'sharon@gmail.com', N'RM01', N'band4', N'Trainee', N'2001')
-GO
-INSERT [dbo].[Employee] ([Emp_ID], [Emp_Name], [Designation], [Location], [DOJ], [LWD], [Vertical_L2], [Email_ID], [RM_Emp_ID], [Band], [Level], [Role_ID]) VALUES (N'IS004', N'Renu', N'Developer', N'102', CAST(N'2021-12-05' AS Date), CAST(N'2022-03-11' AS Date), N'21', N'renu@gmail.com', N'RM01', N'band5', N'Trainee', N'2001')
-GO
-INSERT [dbo].[Employee] ([Emp_ID], [Emp_Name], [Designation], [Location], [DOJ], [LWD], [Vertical_L2], [Email_ID], [RM_Emp_ID], [Band], [Level], [Role_ID]) VALUES (N'IS005', N'Shwetha', N'Development', N'102', CAST(N'2021-12-01' AS Date), CAST(N'2022-03-15' AS Date), N'21', N'shwetha@gmail.com', N'RM01', N'Band1', N'Trainee', N'2001')
-GO
-INSERT [dbo].[Employee] ([Emp_ID], [Emp_Name], [Designation], [Location], [DOJ], [LWD], [Vertical_L2], [Email_ID], [RM_Emp_ID], [Band], [Level], [Role_ID]) VALUES (N'IS006', N'Nandha', N'Developer', N'101', CAST(N'2021-12-06' AS Date), CAST(N'2022-03-14' AS Date), N'21', N'nandha@gmail.com', N'RM01', N'band6', N'Trainee', N'2001')
-GO
-INSERT [dbo].[Holiday] ([Holiday_ID], [Date], [Occasion], [Location_ID], [State_ID]) VALUES (N'1001', CAST(N'2022-01-01' AS Date), N'New Year', N'102', N'KA')
-GO
-INSERT [dbo].[Holiday] ([Holiday_ID], [Date], [Occasion], [Location_ID], [State_ID]) VALUES (N'1002', CAST(N'2022-01-14' AS Date), N'Pongal', N'101', N'TN')
-GO
-INSERT [dbo].[Holiday] ([Holiday_ID], [Date], [Occasion], [Location_ID], [State_ID]) VALUES (N'1003', CAST(N'2022-01-26' AS Date), N'Republic Day', N'103', N'AR')
-GO
-INSERT [dbo].[L0_Table] ([DivisonL0_ID], [DivisonL0_Title]) VALUES (N'1', N'QA')
-GO
-INSERT [dbo].[L0_Table] ([DivisonL0_ID], [DivisonL0_Title]) VALUES (N'2', N'Digital')
-GO
-INSERT [dbo].[L1_Table] ([DivisonL1_ID], [DivisonL1_Title], [DivisonL0_ID]) VALUES (N'11', N'Quality Assurance', N'1')
-GO
-INSERT [dbo].[L1_Table] ([DivisonL1_ID], [DivisonL1_Title], [DivisonL0_ID]) VALUES (N'12', N'Digital', N'2')
-GO
-INSERT [dbo].[L2_Table] ([DivisonL2_ID], [DivisonL2_Title], [DivisonL1_ID]) VALUES (N'21', N'QA1', N'11')
-GO
-INSERT [dbo].[Location] ([Location_ID], [Location_Name], [State_ID]) VALUES (N'101', N'Chennai', N'TN')
-GO
-INSERT [dbo].[Location] ([Location_ID], [Location_Name], [State_ID]) VALUES (N'102', N'Banglore', N'KA')
-GO
-INSERT [dbo].[Location] ([Location_ID], [Location_Name], [State_ID]) VALUES (N'103', N'Hyderabad', N'AR')
-GO
-INSERT [dbo].[Location] ([Location_ID], [Location_Name], [State_ID]) VALUES (N'104', N'Cupertino', N'CU')
-GO
-INSERT [dbo].[Modules] ([Module_ID], [Project_ID]) VALUES (N'MOD_001', N'Proj_001')
-GO
-INSERT [dbo].[Project] ([Project_ID], [Project_Name], [Client_ID], [StartDate], [EndDate], [PO], [SOW], [MSA], [RefCode], [EngagementType]) VALUES (N'Proj_001', N'Test Project', N'CID02', CAST(N'2021-01-02' AS Date), CAST(N'2022-02-28' AS Date), N'Test Client', N'Development', N'NIL', N'IS_REF01', N'Proj_T01')
-GO
-INSERT [dbo].[ProjectType] ([ProjectType_ID], [ProjectType]) VALUES (N'Proj_T01', N'App Development')
-GO
-INSERT [dbo].[ProjectType] ([ProjectType_ID], [ProjectType]) VALUES (N'Proj_T02', N'Mobile application Designing')
-GO
-INSERT [dbo].[Region] ([Region_ID], [Region_Name]) VALUES (N'IN_AR', N'India-AndhraPradesh')
-GO
-INSERT [dbo].[Region] ([Region_ID], [Region_Name]) VALUES (N'IN_KA', N'India-Karnataka')
-GO
-INSERT [dbo].[Region] ([Region_ID], [Region_Name]) VALUES (N'IN_TN', N'India-Tamilnadu')
-GO
-INSERT [dbo].[Region] ([Region_ID], [Region_Name]) VALUES (N'US_CU', N'United States-Cupertino')
-GO
-INSERT [dbo].[Role] ([Role_ID], [Project_ID], [Role_Title], [Currency_ID], [BillingType], [BillingRate], [OverTimeRate], [OverTimeUnit]) VALUES (N'2001', N'Proj_001', N'Developer', N'CURR01', N'Daily', N'5000', N'500', N'hourly')
-GO
-INSERT [dbo].[State] ([State_ID], [State_Name], [Country_ID]) VALUES (N'AR', N'AndhraPradesh', N'IN-3')
-GO
-INSERT [dbo].[State] ([State_ID], [State_Name], [Country_ID]) VALUES (N'CU', N'Cupertino', N'US-1')
-GO
-INSERT [dbo].[State] ([State_ID], [State_Name], [Country_ID]) VALUES (N'KA', N'Karnataka', N'IN-2')
-GO
-INSERT [dbo].[State] ([State_ID], [State_Name], [Country_ID]) VALUES (N'TN', N'TamilNadu', N'IN-1')
-GO
-INSERT [dbo].[Task] ([Task_ID], [Task_Name], [Task_Assignment_Type]) VALUES (N'TASK01', N'Coding', N'Project')
-GO
-INSERT [dbo].[Task] ([Task_ID], [Task_Name], [Task_Assignment_Type]) VALUES (N'TASK02', N'Project meeting', N'Deployement')
-GO
-INSERT [dbo].[Timesheets] ([TS_ID], [Emp_ID], [Date], [Module_ID], [Task_ID], [Description], [Billable?], [Status], [YYYY-MM-DD_Monday]) VALUES (N'TS001', N'IS005', CAST(N'2022-03-10' AS Date), N'MOD_001', N'TASK01', N'Project is under development', N'Yes', N'Pending', CAST(N'2022-03-22' AS Date))
 GO
 ALTER TABLE [dbo].[Allocation]  WITH CHECK ADD  CONSTRAINT [FK_Allocation_AllocationType] FOREIGN KEY([AllocationType_ID])
 REFERENCES [dbo].[AllocationType] ([Alloc_ID])
@@ -617,21 +450,316 @@ REFERENCES [dbo].[Task] ([Task_ID])
 GO
 ALTER TABLE [dbo].[Timesheets] CHECK CONSTRAINT [FK_Timesheets_Task]
 GO
-/****** Object:  StoredProcedure [dbo].[GetdetByID]    Script Date: 18-03-2022 11:07:24 ******/
+/****** Object:  StoredProcedure [dbo].[DeleteUser]    Script Date: 28-03-2022 15:40:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[DeleteUser]
+(
+@Id INT,
+@ReturnCode NVARCHAR(20) OUTPUT
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SET @ReturnCode = 'C200'
+	IF NOT EXISTS (SELECT 1 FROM Users WHERE Id = @Id)
+	BEGIN
+		SET @ReturnCode ='C203'
+		RETURN
+	END
+	ELSE
+	BEGIN
+		DELETE FROM Users WHERE Id = @Id
+		SET @ReturnCode = 'C200'
+		RETURN
+	END
+END
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[GetdetByID]    Script Date: 28-03-2022 15:40:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE PROCEDURE [dbo].[GetdetByID]
-@e_ID varchar(50)
+@Emp_ID varchar(50)
 
 AS
 BEGIN 
 SELECT * FROM Employee
-where Emp_ID= @e_ID
+where Emp_ID= @Emp_ID
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[GetEmp]    Script Date: 28-03-2022 15:40:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[GetEmp] 
+	
+	
+AS
+BEGIN
+	Select * from dbo.Employee;
+	SET NOCOUNT ON;
+
+  
 END
 GO
-USE [master]
+/****** Object:  StoredProcedure [dbo].[GetUsers]    Script Date: 28-03-2022 15:40:04 ******/
+SET ANSI_NULLS ON
 GO
-ALTER DATABASE [TRIMMS] SET  READ_WRITE 
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- EXEC GetUsers
+-- =============================================
+CREATE PROCEDURE [dbo].[GetUsers]
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT * FROM Users(NOLOCK) ORDER BY Id ASC
+END
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[POST]    Script Date: 28-03-2022 15:40:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE Procedure [dbo].[POST]
+--ALTER PROCEDURE POST 
+    -- Add the parameters for the stored procedure here  
+(  
+	 @Emp_ID Varchar(50),
+     @Emp_Name Varchar(MAX)  
+    ,@Designation Varchar(MAX)  
+    ,@Location Varchar(50)  
+    ,@DOJ  DATE,
+	@LWD  DATE,
+	@Vertical_L2 Varchar(50),
+	@Email_ID Varchar(50),
+	@RM_Emp_ID Varchar(50),
+	@Band Varchar(MAX),
+	@Level Varchar(MAX),
+	@Role_ID Varchar(50)
+)
+AS  
+BEGIN  
+    ---- SET NOCOUNT ON added to prevent extra result sets from  
+    SET  NOCOUNT ON;  
+    
+        -- Insert statements for procedure here  
+        INSERT INTO [dbo].[Employee]
+		([Emp_ID],[Emp_Name],[Designation],[Location],[DOJ],[LWD],[Vertical_L2],[Email_ID],[RM_Emp_ID],[Band],[Level],[Role_ID])  
+        VALUES (@Emp_ID, @Emp_Name, @Designation, @Location, @DOJ,@LWD,@Vertical_L2,@Email_ID,@RM_Emp_ID,@Band,@Level,@Role_ID)  
+        
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[SaveUser]    Script Date: 28-03-2022 15:40:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[SaveUser]
+(
+@Id INT,
+@Name NVARCHAR(MAX),
+@EmailId NVARCHAR(MAX),
+@Mobile NVARCHAR(20),
+@Address NVARCHAR(MAX),
+@ReturnCode NVARCHAR(20) OUTPUT
+)
+AS
+BEGIN
+	SET @ReturnCode = 'C200'
+	IF(@Id <> 0)
+	BEGIN
+		IF EXISTS (SELECT 1 FROM Users WHERE EmailId = @EmailId AND Id <> @Id)
+		BEGIN
+			SET @ReturnCode = 'C201'
+			RETURN
+		END
+		IF EXISTS (SELECT 1 FROM Users WHERE Mobile = @Mobile AND Id <> @Id)
+		BEGIN
+			SET @ReturnCode = 'C202'
+			RETURN
+		END
+
+		UPDATE Users SET
+		Name = @Name,
+		EmailId = @EmailId,
+		Mobile = @Mobile,
+		Address = @Address,
+		IsActive = 1
+		WHERE Id = @Id
+
+		SET @ReturnCode = 'C200'
+	END
+	ELSE
+	BEGIN
+		IF EXISTS (SELECT 1 FROM Users WHERE EmailId = @EmailId)
+		BEGIN
+			SET @ReturnCode = 'C201'
+			RETURN
+		END
+		IF EXISTS (SELECT 1 FROM Users WHERE Mobile = @Mobile)
+		BEGIN
+			SET @ReturnCode = 'C202'
+			RETURN
+		END
+
+		INSERT INTO Users (Name,EmailId,Mobile,Address,IsActive)
+		VALUES (@Name,@EmailId,@Mobile,@Address,1)
+
+		SET @ReturnCode = 'C200'
+	END
+END
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[Sp_Employee]    Script Date: 28-03-2022 15:40:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create PROC [dbo].[Sp_Employee]
+@Emp_ID varchar(50),
+@Emp_Name varchar(max),
+@Designation varchar(max),
+@Location varchar(50),
+@DOJ date,
+@LWD date,
+@Vertical_L2 varchar(50),
+@Email_ID varchar(50),
+@RM_Emp_ID varchar(50),
+@Band varchar(max),
+@Level varchar(max),
+@Role_ID varchar(50),
+@type nvarchar(50)
+AS
+BEGIN
+IF(@type='insert')
+BEGIN
+INSERT INTO dbo.Employee(
+ Emp_ID,
+ Emp_Name,
+ Designation,
+ Location,
+ DOJ,
+ LWD,
+ Vertical_L2,
+ Email_ID,
+ RM_Emp_ID,
+ Band,
+ Level,
+ Role_ID
+
+  )
+VALUES
+  (
+ @Emp_ID,
+ @Emp_Name,
+ @Designation,
+ @Location,
+ @DOJ,
+ @LWD,
+ @Vertical_L2,
+ @Email_ID,
+ @RM_Emp_ID,
+ @Band,
+ @Level,
+ @Role_ID
+  
+  )
+  end
+  ELSE IF (@type= 'get')
+BEGIN
+
+Select * FROM dbo.Employee ORDER BY Emp_ID desc
+END
+ELSE IF (@type='getid')
+BEGIN
+SELECT *  FROM dbo.Employee WHERE Emp_ID = @Emp_ID
+END
+ELSE IF (@type ='update')
+BEGIN
+UPDATE dbo.Employee SET
+
+  Emp_ID= @Emp_ID,
+ Emp_Name = @Emp_Name,
+ Designation=@Designation,
+ Location=@Location,
+ DOJ=@DOJ,
+ LWD=@LWD,
+ Vertical_L2=@Vertical_L2,
+ Email_ID=@Email_ID,
+ RM_Emp_ID=@RM_Emp_ID,
+ Band=@Band,
+ Level=@Level,
+ Role_ID=@Role_ID
+
+
+WHERE Emp_ID=@Emp_ID
+END
+ELSE IF (@type = 'delete')
+BEGIN
+DELETE FROM dbo.Employee WHERE Emp_ID=@Emp_ID 
+END
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SP_INSERT_EMP]    Script Date: 28-03-2022 15:40:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[SP_INSERT_EMP]
+	
+@Emp_Name varchar(max),
+@Emp_ID varchar(50),
+@DOB date,
+@Gender varchar(50),
+@Email_ID varchar(50),
+@Address varchar(max),
+@PinCode int,
+@State_ID varchar(50),
+@Country_ID varchar(50),
+@Contact_Number varchar(max)
+
+AS
+BEGIN
+SET NOCOUNT ON;
+select E.Emp_Name,E.Emp_ID,E.DOB,E.Email_ID,E.Gender,E.Contact_Number,E.Address,S.State_ID,C.Country_ID,E.PinCode
+From Employee E inner join State S 
+on E.State_ID = S.State_ID 
+inner join Country C on E.Country_ID = C.Country_ID
+	
+	
+	INSERT INTO [dbo].[Employee]
+		([Emp_Name],[Emp_ID],[DOB],[Gender],[Email_ID],[Address],[PinCode],[State_ID],[Country_ID],[Contact_Number])  
+        VALUES (@Emp_Name,@Emp_ID,@DOB,@Gender, @Email_ID,@Address,@PinCode,@State_ID,@Country_ID,@Contact_Number) 
+    
+	
+END
 GO
