@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [TRIMMS]    Script Date: 15-03-2022 16:54:43 ******/
+/****** Object:  Database [TRIMMS]    Script Date: 17-03-2022 10:45:40 ******/
 CREATE DATABASE [TRIMMS]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,7 +80,7 @@ ALTER DATABASE [TRIMMS] SET QUERY_STORE = OFF
 GO
 USE [TRIMMS]
 GO
-/****** Object:  Table [dbo].[Allocation]    Script Date: 15-03-2022 16:54:43 ******/
+/****** Object:  Table [dbo].[Allocation]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -99,7 +99,7 @@ CREATE TABLE [dbo].[Allocation](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AllocationType]    Script Date: 15-03-2022 16:54:43 ******/
+/****** Object:  Table [dbo].[AllocationType]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -113,7 +113,7 @@ CREATE TABLE [dbo].[AllocationType](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Client]    Script Date: 15-03-2022 16:54:43 ******/
+/****** Object:  Table [dbo].[Client]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -129,7 +129,7 @@ CREATE TABLE [dbo].[Client](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ClientGroup]    Script Date: 15-03-2022 16:54:43 ******/
+/****** Object:  Table [dbo].[ClientGroup]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -143,7 +143,7 @@ CREATE TABLE [dbo].[ClientGroup](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Country]    Script Date: 15-03-2022 16:54:43 ******/
+/****** Object:  Table [dbo].[Country]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -158,7 +158,7 @@ CREATE TABLE [dbo].[Country](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Currency]    Script Date: 15-03-2022 16:54:43 ******/
+/****** Object:  Table [dbo].[Currency]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -173,7 +173,7 @@ CREATE TABLE [dbo].[Currency](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Employee]    Script Date: 15-03-2022 16:54:43 ******/
+/****** Object:  Table [dbo].[Employee]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -185,18 +185,19 @@ CREATE TABLE [dbo].[Employee](
 	[Location] [varchar](50) NOT NULL,
 	[DOJ] [date] NOT NULL,
 	[LWD] [date] NOT NULL,
-	[Vertical(L2)] [varchar](50) NOT NULL,
+	[Vertical_L2] [varchar](50) NOT NULL,
 	[Email_ID] [varchar](50) NOT NULL,
 	[RM_Emp_ID] [varchar](50) NOT NULL,
 	[Band] [varchar](max) NOT NULL,
 	[Level] [varchar](max) NOT NULL,
+	[Role_ID] [varchar](50) NULL,
  CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED 
 (
 	[Emp_ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Holiday]    Script Date: 15-03-2022 16:54:43 ******/
+/****** Object:  Table [dbo].[Holiday]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -213,7 +214,7 @@ CREATE TABLE [dbo].[Holiday](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[L0_Table]    Script Date: 15-03-2022 16:54:43 ******/
+/****** Object:  Table [dbo].[L0_Table]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -227,7 +228,7 @@ CREATE TABLE [dbo].[L0_Table](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[L1_Table]    Script Date: 15-03-2022 16:54:43 ******/
+/****** Object:  Table [dbo].[L1_Table]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -242,7 +243,7 @@ CREATE TABLE [dbo].[L1_Table](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[L2_Table]    Script Date: 15-03-2022 16:54:44 ******/
+/****** Object:  Table [dbo].[L2_Table]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -257,7 +258,7 @@ CREATE TABLE [dbo].[L2_Table](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Location]    Script Date: 15-03-2022 16:54:44 ******/
+/****** Object:  Table [dbo].[Location]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -272,7 +273,7 @@ CREATE TABLE [dbo].[Location](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Modules]    Script Date: 15-03-2022 16:54:44 ******/
+/****** Object:  Table [dbo].[Modules]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -286,7 +287,7 @@ CREATE TABLE [dbo].[Modules](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Project]    Script Date: 15-03-2022 16:54:44 ******/
+/****** Object:  Table [dbo].[Project]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -308,7 +309,7 @@ CREATE TABLE [dbo].[Project](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ProjectType]    Script Date: 15-03-2022 16:54:44 ******/
+/****** Object:  Table [dbo].[ProjectType]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -322,7 +323,7 @@ CREATE TABLE [dbo].[ProjectType](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Region]    Script Date: 15-03-2022 16:54:44 ******/
+/****** Object:  Table [dbo].[Region]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -336,7 +337,7 @@ CREATE TABLE [dbo].[Region](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Role]    Script Date: 15-03-2022 16:54:44 ******/
+/****** Object:  Table [dbo].[Role]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -347,7 +348,7 @@ CREATE TABLE [dbo].[Role](
 	[Role_Title] [varchar](max) NOT NULL,
 	[Currency_ID] [varchar](50) NOT NULL,
 	[BillingType] [varchar](max) NOT NULL,
-	[BillingRate] [money] NOT NULL,
+	[BillingRate] [nvarchar](max) NOT NULL,
 	[OverTimeRate] [varchar](50) NOT NULL,
 	[OverTimeUnit] [varchar](50) NOT NULL,
  CONSTRAINT [PK_Role] PRIMARY KEY CLUSTERED 
@@ -356,7 +357,7 @@ CREATE TABLE [dbo].[Role](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[State]    Script Date: 15-03-2022 16:54:44 ******/
+/****** Object:  Table [dbo].[State]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -371,7 +372,7 @@ CREATE TABLE [dbo].[State](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Task]    Script Date: 15-03-2022 16:54:44 ******/
+/****** Object:  Table [dbo].[Task]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -386,7 +387,7 @@ CREATE TABLE [dbo].[Task](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Timesheets]    Script Date: 15-03-2022 16:54:44 ******/
+/****** Object:  Table [dbo].[Timesheets]    Script Date: 17-03-2022 10:45:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -406,6 +407,92 @@ CREATE TABLE [dbo].[Timesheets](
 	[TS_ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+INSERT [dbo].[AllocationType] ([Alloc_ID], [Allocation_Type]) VALUES (N'AID01', N'AT_1')
+GO
+INSERT [dbo].[AllocationType] ([Alloc_ID], [Allocation_Type]) VALUES (N'AID02', N'AT_2')
+GO
+INSERT [dbo].[Client] ([Client_ID], [ClientGroup_ID], [Client_Name], [Location_ID]) VALUES (N'CID01', N'CG01', N'Convey Health Solutions', N'104')
+GO
+INSERT [dbo].[Client] ([Client_ID], [ClientGroup_ID], [Client_Name], [Location_ID]) VALUES (N'CID02', N'CG02', N'Test Client', N'103')
+GO
+INSERT [dbo].[ClientGroup] ([ClientGroup_ID], [ClientGroup_Name]) VALUES (N'CG01', N'CHS')
+GO
+INSERT [dbo].[ClientGroup] ([ClientGroup_ID], [ClientGroup_Name]) VALUES (N'CG02', N'TC')
+GO
+INSERT [dbo].[Country] ([Country_ID], [Country_Name], [Region_ID]) VALUES (N'IN-1', N'India', N'IN_TN')
+GO
+INSERT [dbo].[Country] ([Country_ID], [Country_Name], [Region_ID]) VALUES (N'IN-2', N'India', N'IN_KA')
+GO
+INSERT [dbo].[Country] ([Country_ID], [Country_Name], [Region_ID]) VALUES (N'IN-3', N'India', N'IN_AR')
+GO
+INSERT [dbo].[Country] ([Country_ID], [Country_Name], [Region_ID]) VALUES (N'US-1', N'United States', N'US_CU')
+GO
+INSERT [dbo].[Currency] ([Currency_ID], [Currency_Symbol], [Country_ID]) VALUES (N'CURR01', N'Rs.', N'IN-1')
+GO
+INSERT [dbo].[Currency] ([Currency_ID], [Currency_Symbol], [Country_ID]) VALUES (N'CURR02', N'Rs.', N'IN-2')
+GO
+INSERT [dbo].[Currency] ([Currency_ID], [Currency_Symbol], [Country_ID]) VALUES (N'CURR03', N'$', N'US-1')
+GO
+INSERT [dbo].[Employee] ([Emp_ID], [Emp_Name], [Designation], [Location], [DOJ], [LWD], [Vertical_L2], [Email_ID], [RM_Emp_ID], [Band], [Level], [Role_ID]) VALUES (N'IS001', N'Srini', N'Developer', N'101', CAST(N'2021-12-01' AS Date), CAST(N'2022-03-16' AS Date), N'21', N'srini@gmail.com', N'RM01', N'Band2', N'Trainer', N'2001')
+GO
+INSERT [dbo].[Employee] ([Emp_ID], [Emp_Name], [Designation], [Location], [DOJ], [LWD], [Vertical_L2], [Email_ID], [RM_Emp_ID], [Band], [Level], [Role_ID]) VALUES (N'IS005', N'Shwetha', N'Development', N'102', CAST(N'2021-12-01' AS Date), CAST(N'2022-03-15' AS Date), N'21', N'shwetha@gmail.com', N'RM05', N'Band1', N'Trainee', N'2001')
+GO
+INSERT [dbo].[Holiday] ([Holiday_ID], [Date], [Occasion], [Location_ID], [State_ID]) VALUES (N'1001', CAST(N'2022-01-01' AS Date), N'New Year', N'102', N'KA')
+GO
+INSERT [dbo].[Holiday] ([Holiday_ID], [Date], [Occasion], [Location_ID], [State_ID]) VALUES (N'1002', CAST(N'2022-01-14' AS Date), N'Pongal', N'101', N'TN')
+GO
+INSERT [dbo].[Holiday] ([Holiday_ID], [Date], [Occasion], [Location_ID], [State_ID]) VALUES (N'1003', CAST(N'2022-01-26' AS Date), N'Republic Day', N'103', N'AR')
+GO
+INSERT [dbo].[L0_Table] ([DivisonL0_ID], [DivisonL0_Title]) VALUES (N'1', N'QA')
+GO
+INSERT [dbo].[L0_Table] ([DivisonL0_ID], [DivisonL0_Title]) VALUES (N'2', N'Digital')
+GO
+INSERT [dbo].[L1_Table] ([DivisonL1_ID], [DivisonL1_Title], [DivisonL0_ID]) VALUES (N'11', N'Quality Assurance', N'1')
+GO
+INSERT [dbo].[L1_Table] ([DivisonL1_ID], [DivisonL1_Title], [DivisonL0_ID]) VALUES (N'12', N'Digital', N'2')
+GO
+INSERT [dbo].[L2_Table] ([DivisonL2_ID], [DivisonL2_Title], [DivisonL1_ID]) VALUES (N'21', N'QA1', N'11')
+GO
+INSERT [dbo].[Location] ([Location_ID], [Location_Name], [State_ID]) VALUES (N'101', N'Chennai', N'TN')
+GO
+INSERT [dbo].[Location] ([Location_ID], [Location_Name], [State_ID]) VALUES (N'102', N'Banglore', N'KA')
+GO
+INSERT [dbo].[Location] ([Location_ID], [Location_Name], [State_ID]) VALUES (N'103', N'Hyderabad', N'AR')
+GO
+INSERT [dbo].[Location] ([Location_ID], [Location_Name], [State_ID]) VALUES (N'104', N'Cupertino', N'CU')
+GO
+INSERT [dbo].[Modules] ([Module_ID], [Project_ID]) VALUES (N'MOD_001', N'Proj_001')
+GO
+INSERT [dbo].[Project] ([Project_ID], [Project_Name], [Client_ID], [StartDate], [EndDate], [PO], [SOW], [MSA], [RefCode], [EngagementType]) VALUES (N'Proj_001', N'Test Project', N'CID02', CAST(N'2021-01-02' AS Date), CAST(N'2022-02-28' AS Date), N'Test Client', N'Development', N'NIL', N'IS_REF01', N'Proj_T01')
+GO
+INSERT [dbo].[ProjectType] ([ProjectType_ID], [ProjectType]) VALUES (N'Proj_T01', N'App Development')
+GO
+INSERT [dbo].[ProjectType] ([ProjectType_ID], [ProjectType]) VALUES (N'Proj_T02', N'Mobile application Designing')
+GO
+INSERT [dbo].[Region] ([Region_ID], [Region_Name]) VALUES (N'IN_AR', N'India-AndhraPradesh')
+GO
+INSERT [dbo].[Region] ([Region_ID], [Region_Name]) VALUES (N'IN_KA', N'India-Karnataka')
+GO
+INSERT [dbo].[Region] ([Region_ID], [Region_Name]) VALUES (N'IN_TN', N'India-Tamilnadu')
+GO
+INSERT [dbo].[Region] ([Region_ID], [Region_Name]) VALUES (N'US_CU', N'United States-Cupertino')
+GO
+INSERT [dbo].[Role] ([Role_ID], [Project_ID], [Role_Title], [Currency_ID], [BillingType], [BillingRate], [OverTimeRate], [OverTimeUnit]) VALUES (N'2001', N'Proj_001', N'Developer', N'CURR01', N'Daily', N'5000', N'500', N'hourly')
+GO
+INSERT [dbo].[State] ([State_ID], [State_Name], [Country_ID]) VALUES (N'AR', N'AndhraPradesh', N'IN-3')
+GO
+INSERT [dbo].[State] ([State_ID], [State_Name], [Country_ID]) VALUES (N'CU', N'Cupertino', N'US-1')
+GO
+INSERT [dbo].[State] ([State_ID], [State_Name], [Country_ID]) VALUES (N'KA', N'Karnataka', N'IN-2')
+GO
+INSERT [dbo].[State] ([State_ID], [State_Name], [Country_ID]) VALUES (N'TN', N'TamilNadu', N'IN-1')
+GO
+INSERT [dbo].[Task] ([Task_ID], [Task_Name], [Task_Assignment_Type]) VALUES (N'TASK01', N'Coding', N'Project')
+GO
+INSERT [dbo].[Task] ([Task_ID], [Task_Name], [Task_Assignment_Type]) VALUES (N'TASK02', N'Project meeting', N'Deployement')
+GO
+INSERT [dbo].[Timesheets] ([TS_ID], [Emp_ID], [Date], [Module_ID], [Task_ID], [Description], [Billable?], [Status], [YYYY-MM-DD_Monday]) VALUES (N'TS001', N'IS005', CAST(N'2022-03-10' AS Date), N'MOD_001', N'TASK01', N'Project is under development', N'Yes', N'Pending', CAST(N'2022-03-22' AS Date))
 GO
 ALTER TABLE [dbo].[Allocation]  WITH CHECK ADD  CONSTRAINT [FK_Allocation_AllocationType] FOREIGN KEY([AllocationType_ID])
 REFERENCES [dbo].[AllocationType] ([Alloc_ID])
@@ -437,7 +524,7 @@ REFERENCES [dbo].[Country] ([Country_ID])
 GO
 ALTER TABLE [dbo].[Currency] CHECK CONSTRAINT [FK_Currency_Country]
 GO
-ALTER TABLE [dbo].[Employee]  WITH CHECK ADD  CONSTRAINT [FK_Employee_L2_Table] FOREIGN KEY([Vertical(L2)])
+ALTER TABLE [dbo].[Employee]  WITH CHECK ADD  CONSTRAINT [FK_Employee_L2_Table] FOREIGN KEY([Vertical_L2])
 REFERENCES [dbo].[L2_Table] ([DivisonL2_ID])
 GO
 ALTER TABLE [dbo].[Employee] CHECK CONSTRAINT [FK_Employee_L2_Table]
@@ -446,6 +533,11 @@ ALTER TABLE [dbo].[Employee]  WITH CHECK ADD  CONSTRAINT [FK_Employee_Location] 
 REFERENCES [dbo].[Location] ([Location_ID])
 GO
 ALTER TABLE [dbo].[Employee] CHECK CONSTRAINT [FK_Employee_Location]
+GO
+ALTER TABLE [dbo].[Employee]  WITH CHECK ADD  CONSTRAINT [FK_Employee_Role] FOREIGN KEY([Role_ID])
+REFERENCES [dbo].[Role] ([Role_ID])
+GO
+ALTER TABLE [dbo].[Employee] CHECK CONSTRAINT [FK_Employee_Role]
 GO
 ALTER TABLE [dbo].[Holiday]  WITH CHECK ADD  CONSTRAINT [FK_Holiday_Location] FOREIGN KEY([Location_ID])
 REFERENCES [dbo].[Location] ([Location_ID])
@@ -521,3 +613,4 @@ USE [master]
 GO
 ALTER DATABASE [TRIMMS] SET  READ_WRITE 
 GO
+
