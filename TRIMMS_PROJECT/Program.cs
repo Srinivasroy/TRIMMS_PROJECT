@@ -8,9 +8,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<TRIMMS_PROJECT.Data.TRIMMSContext>(op 
+builder.Services.AddDbContext<TRIMMS_PROJECT.Models.TRIMMS_PROJECTContext>(op 
     
-    => op.UseSqlServer(builder.Configuration.GetConnectionString("Database"))
+    => op.UseSqlServer(builder.Configuration.GetConnectionString("DataBase"))
     
     );
 
