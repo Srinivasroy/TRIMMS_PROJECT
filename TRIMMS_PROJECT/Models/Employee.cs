@@ -20,11 +20,20 @@ namespace TRIMMS_PROJECT.Models
         public DateTime DOB { get; set; } 
         public string Gender { get; set; } = "";
         public string Email_ID { get; set; } = "";
-        public String Contact_Number { get; set; } = "";
+        public string Contact_Number { get; set; } = "";
         public string Address { get; set; } = "";
-        public string State_ID { get; set; } = "";
+        public string State_Name { get; set; } = "";
         public string Country_ID { get; set; } = "";
         public string PinCode { get; set; } = "";
+        public string Emp_Type { get; set; } = "";
+        public string Department { get; set; } = "";
+        public string Designation { get; set; } = "";
+        public DateTime DOJ  { get; set; } 
+        public string Level { get; set; } = "";
+        public string  Band { get; set; } = "";
+        public string  Reporting_Manager { get; set; } = "";
+        public string Location { get; set; } = "";
+        public string WorkEXPDOJ { get; set; } = "";
 
 
 

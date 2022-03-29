@@ -23,10 +23,20 @@ namespace TRIMMS_PROJECT.Models
                 com.Parameters.AddWithValue("@Email_ID", emp.Email_ID);
                 com.Parameters.AddWithValue("@Contact_Number", emp.Contact_Number);
                 com.Parameters.AddWithValue("@Address", emp.Address);
-                com.Parameters.AddWithValue("@State_ID", emp.State_ID);
+                com.Parameters.AddWithValue("@State_Name", emp.State_Name);
                 com.Parameters.AddWithValue("@Country_ID", emp.Country_ID);
                 com.Parameters.AddWithValue("@PinCode", emp.PinCode);
+                com.Parameters.AddWithValue("@Emp_Type", emp.Emp_Type);
+                com.Parameters.AddWithValue("@Department", emp.Department);
+                com.Parameters.AddWithValue("@Designation", emp.Designation);
+                com.Parameters.AddWithValue("@DOJ", emp.DOJ);
+                com.Parameters.AddWithValue("@Level", emp.Level);
+                com.Parameters.AddWithValue("@Band", emp.Band);
+                com.Parameters.AddWithValue("@Reporting_Manager", emp.Reporting_Manager);
+                com.Parameters.AddWithValue("@Location", emp.Location);
+                com.Parameters.AddWithValue("@WorkEXPDOJ", emp.WorkEXPDOJ);
                
+
                 db.Open();
                 com.ExecuteNonQuery();
                 db.Close();
