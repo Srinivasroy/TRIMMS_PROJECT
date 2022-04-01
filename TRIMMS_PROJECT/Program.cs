@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,16 @@ builder.Services.AddDbContext<TRIMMS_PROJECT.Models.TRIMMS_PROJECTContext>(op
     
     );
 
+builder.Services.AddCors((setup) =>
+{ 
+    setup.AddPolicy("default", (options) => 
+    { 
+        options.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
+    });
+});
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,7 +34,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("default");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

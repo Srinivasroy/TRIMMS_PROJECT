@@ -17,7 +17,7 @@ namespace TRIMMS_PROJECT.Models
         public string Emp_ID { get; set; } = "";
         public string Emp_Name { get; set; } = "";
 
-        public DateTime DOB { get; set; } 
+        public string DOB { get; set; } = "";
         public string Gender { get; set; } = "";
         public string Email_ID { get; set; } = "";
         public string Contact_Number { get; set; } = "";
@@ -28,7 +28,7 @@ namespace TRIMMS_PROJECT.Models
         public string Emp_Type { get; set; } = "";
         public string Department { get; set; } = "";
         public string Designation { get; set; } = "";
-        public DateTime DOJ  { get; set; } 
+        public string DOJ { get; set; } = "";
         public string Level { get; set; } = "";
         public string  Band { get; set; } = "";
         public string  Reporting_Manager { get; set; } = "";
