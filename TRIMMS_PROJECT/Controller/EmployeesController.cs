@@ -31,11 +31,16 @@ namespace TRIMMS_PROJECT.Controller
             return await _context.Employee.ToListAsync();
         }
 
-        // GET: api/Employees/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Employee>> GetEmployee(string id)
+        // GET api/Employees.Email_ID?Email_ID=user@domain.com
+        [HttpGet("{Email_ID}")]
+        public async Task<ActionResult<Employee>> GetEmployee(string Email_ID)
         {
-            var employee = await _context.Employee.FindAsync(id);
+           
+            
+            var employee = await _context.Employee.FindAsync(Email_ID);
+
+
+          //  var employee = await;
 
             if (employee == null)
             {
@@ -96,10 +101,10 @@ namespace TRIMMS_PROJECT.Controller
         }
 
         // DELETE: api/Employees/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteEmployee(string id)
+        [HttpDelete("{Email_ID}")]
+        public async Task<IActionResult> DeleteEmployee(string Email_ID)
         {
-            var employee = await _context.Employee.FindAsync(id);
+            var employee = await _context.Employee.FindAsync(Email_ID);
             if (employee == null)
             {
                 return NotFound();

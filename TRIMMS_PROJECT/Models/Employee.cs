@@ -11,14 +11,14 @@ namespace TRIMMS_PROJECT.Models
 {
     public class Employee
     {
-
-        [Key]
-        [Required]
+      
         public string Emp_ID { get; set; } = "";
         public string Emp_Name { get; set; } = "";
 
         public string DOB { get; set; } = "";
         public string Gender { get; set; } = "";
+        [Key]
+        [Required]
         public string Email_ID { get; set; } = "";
         public string Contact_Number { get; set; } = "";
         public string Address { get; set; } = "";
